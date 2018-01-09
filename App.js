@@ -36,7 +36,7 @@ export default class App extends Component {
         <Text style={styles.welcome} selectable={true}>
           Welcome to React Native!
         </Text>
-        <Text style={styles.instructions} selectable={true} seletionColor={'red'}>
+        <Text style={styles.instructions} selectable={true} selectionColor={'red'}>
           To get started, edit App.js
         </Text>
         <Text style={styles.instructions}>
