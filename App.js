@@ -12,21 +12,21 @@ import {
   View
 } from 'react-native';
 
-import Box from './components/Box';
-import Button from './components/Button';
-
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
+  'Cmd+D or shake for dev menu',
   android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu Button for dev menu',
+  'Shake or press menu Button for dev menu',
 });
+
+import Square from './components/Square';
+import Button from './components/Button';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      shoMeBox: true
+      shoMeSquare: true
     };
   }
 
@@ -42,18 +42,18 @@ export default class App extends Component {
         <Text style={styles.instructions}>
           {instructions}
         </Text>
-        { this.state.shoMeBox &&
-          <Box style={styles.box} />
+        { this.state.shoMeSquare &&
+          <Square style={styles.Square} />
         }
         <View style={styles.btnContainer}>
           <Button
             label={'Remove'}
-            onPress={() => this.setState({ shoMeBox: false })}
+            onPress={() => this.setState({ shoMeSquare: false })}
             btnColorBlueOrGreen={true}
           />
           <Button
             label={'Create'}
-            onPress={() => this.setState({ shoMeBox: true })}
+            onPress={() => this.setState({ shoMeSquare: true })}
             btnColorBlueOrGreen={false}
           />
         </View>
