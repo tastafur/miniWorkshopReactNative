@@ -19,44 +19,19 @@ const instructions = Platform.select({
   'Shake or press menu Button for dev menu',
 });
 
-import Square from './components/Square';
-import Button from './components/Button';
-
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      shoMeSquare: true
-    };
-  }
-
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome} selectable={true}>
+        <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
-        <Text style={styles.instructions} selectable={true} seletionColor={'red'}>
+        <Text style={styles.instructions}>
           To get started, edit App.js
         </Text>
         <Text style={styles.instructions}>
           {instructions}
         </Text>
-        { this.state.shoMeSquare &&
-          <Square style={styles.Square} />
-        }
-        <View style={styles.btnContainer}>
-          <Button
-            label={'Remove'}
-            onPress={() => this.setState({ shoMeSquare: false })}
-            btnColorBlueOrGreen={true}
-          />
-          <Button
-            label={'Create'}
-            onPress={() => this.setState({ shoMeSquare: true })}
-            btnColorBlueOrGreen={false}
-          />
-        </View>
       </View>
     );
   }
@@ -68,13 +43,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  btnContainer: {
-    width: 300,
-    marginTop: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
   },
   welcome: {
     fontSize: 20,
